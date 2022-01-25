@@ -1,0 +1,42 @@
+{
+  "name": "Sync TradingView lists with Exchanges (FTX, Binance)",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "Sync TradingView lists with Exchanges (FTX, Binance)",
+  "homepage_url": "https://github.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": "icons/sync.png",
+    "default_title": "Sync list with exchanges",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.binance.com/en/markets",
+    "https://ftx.com/markets",
+    "https://www.tradingview.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.tradingview.com/"
+      ],
+      "js": [
+        "src/inject/tradingview.js"
+      ]
+    }
+  ]
+}

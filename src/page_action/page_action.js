@@ -1,0 +1,2 @@
+document.getElementById('btn-ftx-futures').onclick = function() { chrome.runtime.getBackgroundPage(function(bg) { bg.syncFtxCoins('futures'); }); };
+document.getElementById('btn-ftx-spot').onclick = function() { chrome.runtime.getBackgroundPage(function(bg) { bg.syncFtxCoins('spot'); }); };
