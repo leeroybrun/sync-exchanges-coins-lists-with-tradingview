@@ -11,32 +11,21 @@
   },
   "default_locale": "en",
   "background": {
-    "scripts": [
-      "src/bg/background.js"
-    ],
-    "persistent": false
+    "service_worker": "src/bg/background.js"
   },
-  "page_action": {
+  "action": {
     "default_icon": "icons/sync.png",
     "default_title": "Sync list with exchanges",
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "scripting",
+    "declarativeContent"
   ],
   "host_permissions": [
     "https://www.binance.com/en/markets",
     "https://ftx.com/markets",
     "https://www.tradingview.com/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.tradingview.com/"
-      ],
-      "js": [
-        "src/inject/tradingview.js"
-      ]
-    }
   ]
 }
