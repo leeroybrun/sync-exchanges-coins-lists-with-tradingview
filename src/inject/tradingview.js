@@ -38,7 +38,7 @@
                 var $row = jQuery(this);
                 var rowExch = jQuery('[class^="exchangeName"]', $row).text();
                 var rowSymbolTitle = jQuery('[class^="symbolTitle"]', $row).text();
-                
+
                 if (
                     rowSymbolTitle.toLowerCase() == coin.toLowerCase() 
                     && rowExch.toLowerCase() == exch.toLowerCase()
@@ -48,10 +48,10 @@
                         $addAction.click();
                         console.log('Add '+ coin +' for '+ exch +' to watchlist');
                     }
-
-                    setTimeout(callback, 2000);
                 }
             });
+
+            return setTimeout(callback, 2000);
         }, 2000);
     }
 })();
