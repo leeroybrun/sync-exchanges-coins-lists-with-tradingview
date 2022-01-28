@@ -15,6 +15,7 @@
         return getAllCoins(callback, coins);
       }, 5000);
     } else {
+      coins.sort();
       return callback(coins);
     }
   }

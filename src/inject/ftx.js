@@ -31,6 +31,8 @@
         coins.push(jQuery('td:nth-child(4) a', $row).text().replace('-', '').replace('/', ''));
       });
 
+      coins.sort();
+
       return coins;
     }
 
